@@ -23,6 +23,9 @@
 		A2C17F491B5DE66500C8F79B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C17F481B5DE66500C8F79B /* FBSDKCoreKit.framework */; };
 		A2C17F4C1B5DEB2600C8F79B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C17F4B1B5DEB2600C8F79B /* Bolts.framework */; };
 		A2C17F4E1B5DEB3200C8F79B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C17F4D1B5DEB3200C8F79B /* FBSDKLoginKit.framework */; };
+		A2C17F501B5F11DD00C8F79B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C17F4F1B5F11DD00C8F79B /* FeedViewController.swift */; };
+		A2C17F521B5F12D400C8F79B /* AddSnackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C17F511B5F12D400C8F79B /* AddSnackViewController.swift */; };
+		A2C17F541B5F14EA00C8F79B /* SnackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C17F531B5F14EA00C8F79B /* SnackTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		A2C17F4A1B5DE8C000C8F79B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		A2C17F4B1B5DEB2600C8F79B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		A2C17F4D1B5DEB3200C8F79B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A2C17F4F1B5F11DD00C8F79B /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A2C17F511B5F12D400C8F79B /* AddSnackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSnackViewController.swift; sourceTree = "<group>"; };
+		A2C17F531B5F14EA00C8F79B /* SnackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 				81BA81511A49DA1800E65899 /* Images.xcassets */,
 				81BA81481A49DA1800E65899 /* Supporting Files */,
 				A2C17F4A1B5DE8C000C8F79B /* Bridging-Header.h */,
+				A2C17F4F1B5F11DD00C8F79B /* FeedViewController.swift */,
+				A2C17F511B5F12D400C8F79B /* AddSnackViewController.swift */,
+				A2C17F531B5F14EA00C8F79B /* SnackTableViewCell.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -224,8 +233,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C17F541B5F14EA00C8F79B /* SnackTableViewCell.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
+				A2C17F501B5F11DD00C8F79B /* FeedViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				A2C17F521B5F12D400C8F79B /* AddSnackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
