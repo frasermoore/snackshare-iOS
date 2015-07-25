@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Parse
 
-class FeedViewController: UITableViewController {
+class FeedViewController: UITableViewController, AddSnackDelegate {
     
     var items: [String] = ["We", "Heart", "Swift"]
     
@@ -24,7 +24,7 @@ class FeedViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count;
+        return self.snacks.count;
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -40,4 +40,16 @@ class FeedViewController: UITableViewController {
         
     }
     
+    func addSnack(snack: String?) {
+        self.snacks.append(snack!)
+        self.names.append(snack!)
+        self.tableView!.reloadData()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier! == "ShowAddSnack") {
+            let asvc = segue.destinationViewController as! AddSnackViewController
+            asvc.delegate = self
+        }
+    }
 }

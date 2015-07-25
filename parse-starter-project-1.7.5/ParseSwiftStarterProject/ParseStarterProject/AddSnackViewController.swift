@@ -12,4 +12,16 @@ import Parse
 
 class AddSnackViewController: UIViewController {
     
+    var delegate: AddSnackDelegate?
+    
+    @IBOutlet weak var snackTextField: UITextField!
+    
+    @IBAction func addSnack(sender: UIButton) {
+        self.delegate!.addSnack(self.snackTextField.text!)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+}
+
+protocol AddSnackDelegate {
+    func addSnack(snack: String?)
 }
