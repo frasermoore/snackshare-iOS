@@ -9,7 +9,7 @@
         <!--SnackShare-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SnackShare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="SnackShare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,26 +18,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfj-Tl-KJa">
-                                <rect key="frame" x="117" y="76" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfj-Tl-KJa">
+                                <rect key="frame" x="271" y="436" width="59" height="30"/>
+                                <state key="normal" title="Sign Up!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zeH-gt-Y0z" kind="show" id="IqF-3G-PP1"/>
+                                    <action selector="signUpButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Uj-pY-Ltj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JY-Fv-GkV">
+                                <rect key="frame" x="262" y="241" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t7y-J4-mO2">
+                                <rect key="frame" x="116" y="131" width="368" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5i-A9-ft7">
+                                <rect key="frame" x="116" y="279" width="368" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUn-Hl-Xq5">
+                                <rect key="frame" x="58" y="-92" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVL-tf-VE0">
+                                <rect key="frame" x="261" y="87" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="t7y-J4-mO2" secondAttribute="trailing" constant="100" id="0wI-yI-VE6"/>
+                            <constraint firstItem="Yfj-Tl-KJa" firstAttribute="top" secondItem="a5i-A9-ft7" secondAttribute="bottom" constant="127" id="6Hb-GB-Bpg"/>
+                            <constraint firstItem="PVL-tf-VE0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="67" id="6Z4-Y9-126"/>
+                            <constraint firstAttribute="centerX" secondItem="5JY-Fv-GkV" secondAttribute="centerX" id="6hr-BG-sWS"/>
+                            <constraint firstItem="a5i-A9-ft7" firstAttribute="top" secondItem="5JY-Fv-GkV" secondAttribute="bottom" constant="17" id="C1M-aN-t41"/>
+                            <constraint firstItem="t7y-J4-mO2" firstAttribute="top" secondItem="PVL-tf-VE0" secondAttribute="bottom" constant="23" id="IgW-V1-QT0"/>
+                            <constraint firstItem="a5i-A9-ft7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="Lx1-Qv-4Aq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a5i-A9-ft7" secondAttribute="trailing" constant="100" id="dxH-i0-wc2"/>
+                            <constraint firstItem="5JY-Fv-GkV" firstAttribute="top" secondItem="t7y-J4-mO2" secondAttribute="bottom" constant="80" id="gzc-0D-Vhy"/>
+                            <constraint firstItem="t7y-J4-mO2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="jlD-j5-BCQ"/>
+                            <constraint firstAttribute="centerX" secondItem="PVL-tf-VE0" secondAttribute="centerX" id="tCn-e8-8YF"/>
+                            <constraint firstAttribute="centerX" secondItem="Yfj-Tl-KJa" secondAttribute="centerX" id="uJO-Ej-sam"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SnackShare" id="Geb-Lb-1FE"/>
                     <connections>
-                        <segue destination="zeH-gt-Y0z" kind="show" id="POn-iK-piB"/>
+                        <outlet property="passwordTextField" destination="a5i-A9-ft7" id="YQM-FP-EJC"/>
+                        <outlet property="usernameTextField" destination="t7y-J4-mO2" id="aiU-TZ-4V5"/>
+                        <segue destination="zeH-gt-Y0z" kind="show" identifier="showFeedViewController" id="1vL-lJ-dBB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="391"/>
+            <point key="canvasLocation" x="1202" y="406"/>
         </scene>
         <!--Feed-->
         <scene sceneID="cgZ-BQ-HYu">
@@ -172,7 +216,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="POn-iK-piB"/>
         <segue reference="lbd-ll-73g"/>
     </inferredMetricsTieBreakers>
 </document>
