@@ -307,8 +307,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="SnackShare" id="YTa-MG-SQ9"/>
                     <connections>
+                        <outlet property="passwordTextField" destination="7Z3-RY-Ihr" id="kG7-Gg-OWy"/>
                         <outlet property="usernameTextField" destination="z41-Ja-XkL" id="GN3-CP-N1j"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="ShowSignupScreen" id="Pqc-fi-NPt"/>
+                        <segue destination="zeH-gt-Y0z" kind="show" identifier="showFeedViewController" id="3Ov-I1-tZR"/>
+                        <segue destination="zeH-gt-Y0z" kind="show" id="xIk-Fc-WQk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6y-rc-qRx" sceneMemberID="firstResponder"/>
@@ -317,6 +320,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="xIk-Fc-WQk"/>
         <segue reference="lbd-ll-73g"/>
     </inferredMetricsTieBreakers>
 </document>

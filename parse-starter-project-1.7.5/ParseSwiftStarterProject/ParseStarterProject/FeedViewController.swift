@@ -19,7 +19,18 @@ class FeedViewController: UITableViewController, AddSnackDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.tableView.registerClass(SnackTableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        //get snack items form parse db
+        var query = PFQuery(className:"SnackItem")
+        query.findObjects(<#error: NSErrorPointer#>)
+        query.getObjectInBackgroundWithId("xWMyZEGZ") {
+            (gameScore: PFObject?, error: NSError?) -> Void in
+            if error == nil && gameScore != nil {
+                println(gameScore)
+            } else {
+                println(error)
+            }
+        }
     }
 
     

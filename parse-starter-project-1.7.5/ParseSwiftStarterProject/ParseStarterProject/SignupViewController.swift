@@ -7,10 +7,16 @@
 import UIKit
 import Parse
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    override func viewDidLoad() {
+        self.usernameTextField.delegate = self
+        self.passwordTextField.delegate = self
+    }
+
     
     override func viewWillAppear(animated: Bool) {
         if ((PFUser.currentUser()) != nil) {
@@ -43,5 +49,15 @@ class SignupViewController: UIViewController {
     @IBAction func returnToLoginScreen(sender: UIButton) {
         self.performSegueWithIdentifier("GoBackToLoginScreen", sender: nil)
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if (textField == self.usernameTextField) {
+            self.passwordTextField.becomeFirstResponder()
+        } else {
+            self.passwordTextField.resignFirstResponder()
+        }
+        return true
+    }
+
 }
 
