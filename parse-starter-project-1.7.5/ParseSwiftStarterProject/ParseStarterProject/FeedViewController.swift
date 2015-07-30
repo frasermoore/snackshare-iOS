@@ -12,37 +12,40 @@ import Parse
 
 class FeedViewController: UITableViewController, AddSnackDelegate {
     
-    var items: [String] = ["We", "Heart", "Swift"]
-    
-    var snacks: [String] = ["BEANS", "SPAGHETTI", "BONE"]
-    var names: [String] = ["JIM", "BOB", "LASSIE"]
+    var snackItems: [PFObject]  = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //get snack items form parse db
         var query = PFQuery(className:"SnackItem")
-        query.findObjects(<#error: NSErrorPointer#>)
-        query.getObjectInBackgroundWithId("xWMyZEGZ") {
-            (gameScore: PFObject?, error: NSError?) -> Void in
-            if error == nil && gameScore != nil {
-                println(gameScore)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                println("Successfully retrieved \(objects!.count) scores.")
+                // Do something with the found objects
+                if let objects = objects as? [PFObject] {
+                    self.snackItems = objects
+                }
             } else {
-                println(error)
+                // Log details of the failure
+                println("Error: \(error!) \(error!.userInfo!)")
             }
         }
     }
 
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.snacks.count;
+        return self.snackItems.count;
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:SnackTableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! SnackTableViewCell
         
-        cell.snackName?.text = self.snacks[indexPath.row]
-        cell.personName?.text = self.names[indexPath.row]
+        cell.snackName?.text = self.snackItems[indexPath.row]["snack"] as! String
+        cell.personName?.text = self.snackItems[indexPath.row]["requestor"] as! String
         
         return cell
     }
@@ -51,9 +54,8 @@ class FeedViewController: UITableViewController, AddSnackDelegate {
         
     }
     
-    func addSnack(snack: String?) {
-        self.snacks.append(snack!)
-        self.names.append(snack!)
+    func addSnack(snack: PFObject?) {
+        self.snackItems.append(snack!)
         self.tableView!.reloadData()
     }
     

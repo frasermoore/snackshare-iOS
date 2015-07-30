@@ -17,9 +17,6 @@ class AddSnackViewController: UIViewController {
     @IBOutlet weak var snackTextField: UITextField!
     
     @IBAction func addSnack(sender: UIButton) {
-        self.delegate!.addSnack(self.snackTextField.text!)
-        self.navigationController?.popViewControllerAnimated(true)
-        
         //push new snack object to parse
         var snackItem = PFObject(className:"SnackItem")
         snackItem["requester"] = PFUser.currentUser()?.username!
@@ -32,10 +29,11 @@ class AddSnackViewController: UIViewController {
                 // There was a problem, check error.description
             }
         }
+        self.delegate!.addSnack(snackItem)
         self.navigationController?.popViewControllerAnimated(true)
     }
 }
 
 protocol AddSnackDelegate {
-    func addSnack(snack: String?)
+    func addSnack(snack: PFObject?)
 }
