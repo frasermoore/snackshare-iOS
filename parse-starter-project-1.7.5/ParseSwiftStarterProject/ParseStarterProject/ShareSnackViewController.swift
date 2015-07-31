@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Parse
 
 class ShareSnackViewController: UIViewController {
     var snackName: String = ""
@@ -20,6 +21,16 @@ class ShareSnackViewController: UIViewController {
         self.requesterLabel.text = self.requesterLabel.text! + self.requester
     }
     @IBAction func shareSnack(sender: UIButton) {
+        let user = PFUser.currentUser()
         
+        // Create our Installation query
+        let pushQuery = PFInstallation.query()
+        pushQuery!.whereKey("user", equalTo: self.requester)
+
+        // Send push notification to query
+        let push = PFPush()
+        push.setQuery(pushQuery) // Set our Installation query
+        push.setMessage("\(user!.username) would like to share \(self.snackName) with you")
+        push.sendPushInBackground()
     }
 }

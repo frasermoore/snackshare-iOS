@@ -27,6 +27,7 @@ class AddSnackViewController: UIViewController {
                 // The object has been saved.
             } else {
                 // There was a problem, check error.description
+                println(error?.description)
             }
         }
         self.delegate!.addSnack(snackItem)
