@@ -95,6 +95,59 @@
             </objects>
             <point key="canvasLocation" x="1202" y="406"/>
         </scene>
+        <!--Share Snack View Controller-->
+        <scene sceneID="3gT-7K-EOa">
+            <objects>
+                <viewController id="0Hx-DJ-q6u" customClass="ShareSnackViewController" customModule="SnackShare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mol-ah-BlA"/>
+                        <viewControllerLayoutGuide type="bottom" id="F9x-K1-bCT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ABZ-0y-yH4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZ0-F5-4x4">
+                                <rect key="frame" x="275" y="226" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="With:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alS-sP-kQg">
+                                <rect key="frame" x="275" y="275" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2N-Ya-mtd">
+                                <rect key="frame" x="251" y="482" width="89" height="30"/>
+                                <state key="normal" title="Share snack!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareSnack:" destination="0Hx-DJ-q6u" eventType="touchUpInside" id="caS-XI-ksT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="alS-sP-kQg" secondAttribute="centerX" id="DRy-QE-0hi"/>
+                            <constraint firstItem="U2N-Ya-mtd" firstAttribute="top" secondItem="alS-sP-kQg" secondAttribute="bottom" constant="60" id="Ky6-oE-d6Y"/>
+                            <constraint firstAttribute="centerX" secondItem="VZ0-F5-4x4" secondAttribute="centerX" id="XaW-2B-Y3I"/>
+                            <constraint firstItem="VZ0-F5-4x4" firstAttribute="top" secondItem="Mol-ah-BlA" secondAttribute="bottom" constant="162" id="fuJ-Ab-TVM"/>
+                            <constraint firstAttribute="centerX" secondItem="U2N-Ya-mtd" secondAttribute="centerX" id="fvE-xc-uWh"/>
+                            <constraint firstItem="alS-sP-kQg" firstAttribute="top" secondItem="VZ0-F5-4x4" secondAttribute="bottom" constant="72" id="qOQ-sJ-Czu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="requesterLabel" destination="alS-sP-kQg" id="VVX-mV-8zY"/>
+                        <outlet property="snackLabel" destination="VZ0-F5-4x4" id="xYW-Y8-XpG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFr-Do-JPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2648" y="-290"/>
+        </scene>
         <!--Feed-->
         <scene sceneID="cgZ-BQ-HYu">
             <objects>
@@ -150,6 +203,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Jvg-P3-jr5" kind="show" id="zbj-Eq-WT6"/>
+                        <segue destination="0Hx-DJ-q6u" kind="show" identifier="ShowShareSnack" id="dPj-9G-Xe5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBd-Ff-lR1" userLabel="First Responder" sceneMemberID="firstResponder"/>

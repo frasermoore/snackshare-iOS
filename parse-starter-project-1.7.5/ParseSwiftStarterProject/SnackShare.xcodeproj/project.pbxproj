@@ -30,6 +30,7 @@
 		D16B51231B6306F20023CE49 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16B51221B6306F20023CE49 /* FBSDKLoginKit.framework */; };
 		D16B51251B63070F0023CE49 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16B51241B63070F0023CE49 /* FBSDKCoreKit.framework */; };
 		D16B51271B6805B20023CE49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16B51261B6805B20023CE49 /* LoginViewController.swift */; };
+		D1BCCD041B6ABE0500531C5E /* ShareSnackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BCCD031B6ABE0500531C5E /* ShareSnackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		D16B51221B6306F20023CE49 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		D16B51241B63070F0023CE49 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		D16B51261B6805B20023CE49 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D1BCCD031B6ABE0500531C5E /* ShareSnackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSnackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				A2C17F511B5F12D400C8F79B /* AddSnackViewController.swift */,
 				A2C17F531B5F14EA00C8F79B /* SnackTableViewCell.swift */,
 				D16B51261B6805B20023CE49 /* LoginViewController.swift */,
+				D1BCCD031B6ABE0500531C5E /* ShareSnackViewController.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				TargetAttributes = {
 					81BA81441A49DA1800E65899 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 9DL8NKDDDJ;
 					};
 				};
 			};
@@ -253,6 +257,7 @@
 				81BA814D1A49DA1800E65899 /* SignupViewController.swift in Sources */,
 				A2C17F501B5F11DD00C8F79B /* FeedViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				D1BCCD041B6ABE0500531C5E /* ShareSnackViewController.swift in Sources */,
 				A2C17F521B5F12D400C8F79B /* AddSnackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +360,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -362,9 +369,13 @@
 					/Users/rdubey/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = ParseStarterProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = SnackShare;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ParseStarterProject/Bridging-Header.h";
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -373,6 +384,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -380,9 +393,14 @@
 					/Users/rdubey/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = ParseStarterProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = SnackShare;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ParseStarterProject/Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

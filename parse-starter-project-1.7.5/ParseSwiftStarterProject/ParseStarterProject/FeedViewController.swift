@@ -26,8 +26,11 @@ class FeedViewController: UITableViewController, AddSnackDelegate {
                 // The find succeeded.
                 println("Successfully retrieved \(objects!.count) scores.")
                 // Do something with the found objects
-                if let objects = objects as? [PFObject] {
-                    self.snackItems = objects
+                if let objects2 = objects as? [PFObject] {
+                    self.snackItems = objects2
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.tableView.reloadData()
+                    })
                 }
             } else {
                 // Log details of the failure
@@ -44,14 +47,14 @@ class FeedViewController: UITableViewController, AddSnackDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:SnackTableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! SnackTableViewCell
         
-        cell.snackName?.text = self.snackItems[indexPath.row]["snack"] as! String
-        cell.personName?.text = self.snackItems[indexPath.row]["requestor"] as! String
+        cell.snackName?.text = self.snackItems[indexPath.row]["snack"] as? String
+        cell.personName?.text = self.snackItems[indexPath.row]["requester"] as? String
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+            self.performSegueWithIdentifier("ShowShareSnack", sender: indexPath)
     }
     
     func addSnack(snack: PFObject?) {
@@ -60,9 +63,16 @@ class FeedViewController: UITableViewController, AddSnackDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let indexPath = sender as! NSIndexPath
         if (segue.identifier! == "ShowAddSnack") {
             let asvc = segue.destinationViewController as! AddSnackViewController
             asvc.delegate = self
+        }
+        
+        if segue.identifier! == "ShowShareSnack" {
+            let ssvc = segue.destinationViewController as! ShareSnackViewController
+            ssvc.snackName = (self.snackItems[indexPath.row]["snack"] as? String)!
+            ssvc.requester = (self.snackItems[indexPath.row]["requester"] as? String)!
         }
     }
 }
