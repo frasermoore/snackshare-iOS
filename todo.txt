@@ -1,0 +1,21 @@
+1. Login screen
+	-re add fb login
+	- splash page
+
+2. Make logo/icon
+
+3. Add UI colours
+
+4. Feed
+	- colour
+	- drink vs snack
+	- delete from cloud on share
+
+5. Add snack
+	- drink or snack (images)
+
+6. Cloud code to clean
+
+Colours:
+#e65243
+#ffd700
