@@ -19,7 +19,7 @@ class AddSnackViewController: UIViewController {
     @IBAction func addSnack(sender: UIButton) {
         //push new snack object to parse
         var snackItem = PFObject(className:"SnackItem")
-        snackItem["requester"] = PFUser.currentUser()?.username!
+        snackItem["requester"] = PFUser.currentUser()!.username!
         snackItem["snackName"] = self.snackTextField.text!
         snackItem.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in

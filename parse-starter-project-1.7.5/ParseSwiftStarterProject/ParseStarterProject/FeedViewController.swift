@@ -72,8 +72,8 @@ class FeedViewController: UITableViewController, AddSnackDelegate {
     }
     
     func addSnack(snack: PFObject?) {
-//        self.snackItems.append(snack!)
-//        self.tableView!.reloadData()
+        self.snackItems.append(snack!)
+        self.tableView!.reloadData()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

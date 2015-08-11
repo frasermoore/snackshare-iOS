@@ -30,7 +30,7 @@ class ShareSnackViewController: UIViewController {
         // Send push notification to query
         let push = PFPush()
         push.setQuery(pushQuery) // Set our Installation query
-        push.setMessage("\(user!.username) would like to share \(self.snackName) with you")
+        push.setMessage("\(user!.username!) would like to share \(self.snackName) with you")
         push.sendPushInBackground()
     }
 }
